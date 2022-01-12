@@ -1,0 +1,85 @@
+###
+
+POST http://localhost:8080/media/multipart
+Content-Type: multipart/form-data;boundary=WebBoundary
+
+--WebBoundary
+Content-Disposition: form-data; name="file"; filename="media.jpg"
+Content-Type: image/jpeg
+
+< VitaminD.jpg
+
+> {%
+client.global.set('mediaName',response.body.name);
+ %}
+
+###
+
+POST http://localhost:8080/media/multipart
+Content-Type: multipart/form-data;boundary=WebBoundary
+
+--WebBoundary
+Content-Disposition: form-data; name="file"; filename="media.jpg"
+Content-Type: image/jpeg
+
+< VitaminC.jpg
+
+###
+
+POST http://localhost:8080/media/multipart
+Content-Type: multipart/form-data;boundary=WebBoundary
+
+--WebBoundary
+Content-Disposition: form-data; name="file"; filename="media.jpg"
+Content-Type: image/jpeg
+
+< Spirulina.jpg
+
+###
+
+GET http://localhost:8080/items/getAll
+
+###
+
+GET http://localhost:8080/items/getById?id=1
+
+###
+
+GET http://localhost:8080/items/getById?id=999
+
+### Create Item without image
+
+POST http://localhost:8080/items/save
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Spirulina",
+  "price": 1000,
+  "qty": 10
+}
+
+### Create Item with image
+
+POST http://localhost:8080/items/save
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Spirulina",
+  "price": 1000,
+  "qty": 10,
+  "image": "{{mediaName}}"
+}
+
+###
+
+POST http://localhost:8080/items/removeById/1
+
+###
+
+POST http://localhost:8080/items/restoreById/1
+
+###
+
+GET http://localhost:8080/items/getPopular
