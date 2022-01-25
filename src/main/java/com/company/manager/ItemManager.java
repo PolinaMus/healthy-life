@@ -51,11 +51,10 @@ public class ItemManager {
 
     public ItemGetByIdResponseDTO getById(long id) {
         try {
-
             final ItemModel item = template.queryForObject(
                     // language=PostgreSQL
                     """
-                            SELECT id, name, price, qty,image FROM items
+                            SELECT id, name, price, qty, image FROM items
                             WHERE id = :id AND removed = FALSE
                             """,
                     Map.of("id", id),
@@ -113,7 +112,7 @@ public class ItemManager {
                 // language=PostgreSQL
                 """
                         INSERT INTO items (name, price, qty, image) VALUES (:name, :price, :qty, :image)
-                        RETURNING id, name, price,qty, image
+                        RETURNING id, name, price, qty, image
                         """,
                 Map.of(
                         "name", requestDTO.getName(),
@@ -140,7 +139,7 @@ public class ItemManager {
                     """
                             UPDATE items SET name = :name, price = :price, qty = :qty, image = :image
                             WHERE id = :id AND removed = FALSE
-                            RETURNING id, name, price,qty, image
+                            RETURNING id, name, price, qty, image
                             """,
                     Map.of(
                             "id", requestDTO.getId(),

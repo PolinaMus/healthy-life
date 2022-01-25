@@ -1,12 +1,12 @@
 CREATE TABLE items
 (
-    id         BIGSERIAL PRIMARY KEY,
-    name       TEXT        NOT NULL,
-    price      INT         NOT NULL CHECK ( price >= 0 ),
-    qty        INT         NOT NULL CHECK ( qty >= 0 ) DEFAULT 0,
-    image      TEXT        NOT NULL,
-    removed    BOOL        NOT NULL                    DEFAULT FALSE,
-    created    timestamptz NOT NULL                    DEFAULT CURRENT_TIMESTAMP
+    id      BIGSERIAL PRIMARY KEY,
+    name    TEXT        NOT NULL,
+    price   INT         NOT NULL CHECK ( price >= 0 ),
+    qty     INT         NOT NULL CHECK ( qty >= 0 ) DEFAULT 0,
+    image   TEXT        NOT NULL,
+    removed BOOL        NOT NULL                    DEFAULT FALSE,
+    created timestamptz NOT NULL                    DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE articles
@@ -21,4 +21,14 @@ CREATE TABLE articles
     image          TEXT                    NOT NULL,
     removed        BOOL                    NOT NULL DEFAULT FALSE,
     created        timestamptz             NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE sales
+(
+    id      BIGSERIAL PRIMARY KEY,
+    item_id BIGINT      NOT NULL REFERENCES items,
+    name    TEXT        NOT NULL,
+    price   INT         NOT NULL CHECK ( price >= 0 ),
+    qty     INT         NOT NULL CHECK ( qty >= 0 ) DEFAULT 0,
+    created timestamptz NOT NULL                    DEFAULT CURRENT_TIMESTAMP
 );

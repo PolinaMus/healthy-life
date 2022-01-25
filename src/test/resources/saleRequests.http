@@ -1,0 +1,22 @@
+###
+
+POST http://localhost:8080/sales/register
+Content-Type: application/json
+
+{
+  "itemId": 9,
+  "price": 1900,
+  "qty": 10
+}
+
+###
+
+GET http://localhost:8080/sales/getAll
+
+###
+
+GET http://localhost:8080/sales/getById?id=2
+
+###
+
+GET http://localhost:8080/sales/getById?id=999
