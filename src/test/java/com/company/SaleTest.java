@@ -99,6 +99,12 @@ class SaleTest {
                                               "name": "omega 3",
                                               "price": 1900,
                                               "qty": 10
+                                            },
+                                            {
+                                              "id": 2,
+                                              "name": "vitamin a",
+                                              "price": 900,
+                                              "qty": 2
                                             }
                                           ]
                                         }
