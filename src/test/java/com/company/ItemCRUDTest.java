@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -164,6 +165,79 @@ class ItemCRUDTest {
                 )
                 .andExpectAll(
                         MockMvcResultMatchers.status().isNotFound()
+                );
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/items/save")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(
+                                        // language=JSON
+                                        """
+                                                {
+                                                    "id": 0,
+                                                    "name": "Spirulina",
+                                                    "price": 1000,
+                                                    "qty": 10
+                                                } 
+                                                """
+                                )
+                )
+                .andExpectAll(
+                        MockMvcResultMatchers.status().isOk(),
+                        MockMvcResultMatchers.content().json(
+                                // language=JSON
+                                """
+                                        {
+                                          "item": {
+                                            "id": 34,
+                                            "name": "Spirulina",
+                                            "price": 1000,
+                                            "qty": 10,
+                                            "image": "noimage.png"
+                                          }
+                                        }
+                                        """
+                        )
+                );
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.get("/items/getPopular")
+                )
+                .andExpectAll(MockMvcResultMatchers.status().isOk(),
+                        MockMvcResultMatchers.content().json(
+                                // language=JSON
+                                """
+                                        {
+                                          "items": [
+                                            {
+                                              "id": 12,
+                                              "count": 3,
+                                              "name": "enzymes"
+                                            },
+                                            {
+                                              "id": 6,
+                                              "count": 1,
+                                              "name": "magnesium"
+                                            },
+                                            {
+                                              "id": 2,
+                                              "count": 1,
+                                              "name": "vitamin c"
+                                            },
+                                            {
+                                              "id": 1,
+                                              "count": 1,
+                                              "name": "vitamin d"
+                                            },
+                                            {
+                                              "id": 10,
+                                              "count": 1,
+                                              "name": "probiotics"
+                                            }
+                                          ]
+                                        }
+                                        """
+                        )
                 );
     }
 }
