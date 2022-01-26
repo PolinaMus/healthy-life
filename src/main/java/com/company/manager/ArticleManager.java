@@ -114,7 +114,7 @@ public class ArticleManager {
         final ArticleModel article = template.queryForObject(
                 // language=PostgreSQL
                 """
-                        INSERT INTO articles (name, category, text, first_item_id, 
+                        INSERT INTO articles (name, category, text, first_item_id,
                         second_item_id, third_item_id, image) VALUES (:name,:category,:text,:first_item_id,
                         :second_item_id,:third_item_id,:image)
                         RETURNING id,name,category,text,first_item_id,second_item_id,third_item_id,image
@@ -150,13 +150,13 @@ public class ArticleManager {
             final ArticleModel article = template.queryForObject(
                     // language=PostgreSQL
                     """
-                            UPDATE articles SET name= :name, category = :category, text = :text, first_item_id = :first_item_id, 
+                            UPDATE articles SET name= :name, category = :category, text = :text, first_item_id = :first_item_id,
                             second_item_id = :second_item_id, third_item_id = :third_item_id, image = :image
                             WHERE id = :id AND removed = FALSE
                             RETURNING id,name,category,text,first_item_id,second_item_id,third_item_id,image
                             """,
                     Map.of(
-                            "id", requestDTO.getImage(),
+                            "id", requestDTO.getId(),
                             "name", requestDTO.getName(),
                             "category", requestDTO.getCategory(),
                             "text", requestDTO.getText(),
