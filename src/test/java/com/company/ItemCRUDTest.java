@@ -189,7 +189,7 @@ class ItemCRUDTest {
                                 """
                                         {
                                           "item": {
-                                            "id": 34,
+                                            "id": 14,
                                             "name": "Spirulina",
                                             "price": 1000,
                                             "qty": 10,
