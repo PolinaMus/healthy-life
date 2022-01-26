@@ -128,44 +128,5 @@ class ArticleCRUDTest {
                 .andExpectAll(
                         MockMvcResultMatchers.status().isNotFound()
                 );
-
-//        mockMvc.perform(
-//                        MockMvcRequestBuilders.post("/article/save")
-//                                .contentType(MediaType.APPLICATION_JSON)
-//                                .content(
-//                                        // language=JSON
-//                                        """
-//                                                {
-//                                                "id": 0,
-//                                                "name": "What’s in Your Multivitamin? Here Are 10 Ingredients To Look Out For",
-//                                                "category": "wellness",
-//                                                "text": "There is no question that the entire human body functions best when it has a steady supply of high-quality nutrition. A deficiency of any nutrient has profound effects on the human system because the body is a complex system dependent upon the proper functioning of many interdependent systems. ",
-//                                                "first_item_id": 2,
-//                                                "second_item_id": 5,
-//                                                "third_item_id": 10
-//                                                }
-//                                                """
-//                                )
-//                )
-//                .andExpectAll(
-//                        MockMvcResultMatchers.status().isOk(),
-//                        MockMvcResultMatchers.content().json(
-//                                // language=JSON
-//                                """
-//                                        {
-//                                           "article": {
-//                                           "id": 6,
-//                                           "name": "What’s in Your Multivitamin? Here Are 10 Ingredients To Look Out For",
-//                                           "category": "wellness",
-//                                           "text": "There is no question that the entire human body functions best when it has a steady supply of high-quality nutrition. A deficiency of any nutrient has profound effects on the human system because the body is a complex system dependent upon the proper functioning of many interdependent systems. ",
-//                                           "first_item_id": 2,
-//                                           "second_item_id": 5,
-//                                           "third_item_id": 10,
-//                                           "image": "noimage.png"
-//                                           }
-//                                        }
-//                                        """
-//                        )
-//                );
     }
 }
