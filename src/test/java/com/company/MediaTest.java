@@ -46,19 +46,19 @@ class MediaTest {
                 );
     }
 
-//    @Test
-//    void shouldUploadMultipleMultipart() throws Exception {
-//        final MockMultipartFile imageJpg = new MockMultipartFile("files", "media.jpg", MediaType.IMAGE_JPEG_VALUE, Files.newInputStream(ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "media.jpg").toPath()));
-//        final MockMultipartFile imagePng = new MockMultipartFile("files", "media.png", MediaType.IMAGE_PNG_VALUE, Files.newInputStream(ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "media.png").toPath()));
-//
-//        mockMvc.perform(
-//                        MockMvcRequestBuilders.multipart("/media/multi-multipart")
-//                                .file(imageJpg)
-//                                .file(imagePng)
-//                )
-//                .andExpectAll(
-//                        MockMvcResultMatchers.status().isOk(),
-//                        MockMvcResultMatchers.jsonPath("$.names.length()").value(2)
-//                );
-//    }
+    @Test
+    void shouldUploadMultipleMultipart() throws Exception {
+        final MockMultipartFile imageJpg = new MockMultipartFile("files", "media.jpg", MediaType.IMAGE_JPEG_VALUE, Files.newInputStream(ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "media.jpg").toPath()));
+        final MockMultipartFile imagePng = new MockMultipartFile("files", "media.png", MediaType.IMAGE_PNG_VALUE, Files.newInputStream(ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "media.png").toPath()));
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.multipart("/media/multi-multipart")
+                                .file(imageJpg)
+                                .file(imagePng)
+                )
+                .andExpectAll(
+                        MockMvcResultMatchers.status().isOk(),
+                        MockMvcResultMatchers.jsonPath("$.names.length()").value(2)
+                );
+    }
 }
