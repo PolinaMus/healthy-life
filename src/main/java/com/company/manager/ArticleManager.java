@@ -115,17 +115,17 @@ public class ArticleManager {
                 // language=PostgreSQL
                 """
                         INSERT INTO articles (name, category, text, first_item_id,
-                        second_item_id, third_item_id, image) VALUES (:name,:category,:text,:first_item_id,
-                        :second_item_id,:third_item_id,:image)
-                        RETURNING id,name,category,text,first_item_id,second_item_id,third_item_id,image
+                        second_item_id, third_item_id, image) VALUES (:name, :category, :text, :firstItemId,
+                        :secondItemId, :thirdItemId, :image)
+                        RETURNING id, name, category, text, first_item_id, second_item_id, third_item_id, image
                         """,
                 Map.of(
                         "name", requestDTO.getName(),
                         "category", requestDTO.getCategory(),
                         "text", requestDTO.getText(),
-                        "first_item_id", requestDTO.getFirstItemId(),
-                        "second_item_id", requestDTO.getSecondItemId(),
-                        "third_item_id", requestDTO.getThirdItemId(),
+                        "firstItemId", requestDTO.getFirstItemId(),
+                        "secondItemId", requestDTO.getSecondItemId(),
+                        "thirdItemId", requestDTO.getThirdItemId(),
                         "image", getImage(requestDTO.getImage())
                 ),
                 articleRowMapper
@@ -150,19 +150,19 @@ public class ArticleManager {
             final ArticleModel article = template.queryForObject(
                     // language=PostgreSQL
                     """
-                            UPDATE articles SET name= :name, category = :category, text = :text, first_item_id = :first_item_id,
-                            second_item_id = :second_item_id, third_item_id = :third_item_id, image = :image
+                            UPDATE articles SET name= :name, category = :category, text = :text, first_item_id = :firstItemId,
+                            second_item_id = :secondItemId, third_item_id = :thirdItemId, image = :image
                             WHERE id = :id AND removed = FALSE
-                            RETURNING id,name,category,text,first_item_id,second_item_id,third_item_id,image
+                            RETURNING id, name, category, text, first_item_id, second_item_id, third_item_id, image
                             """,
                     Map.of(
                             "id", requestDTO.getId(),
                             "name", requestDTO.getName(),
                             "category", requestDTO.getCategory(),
                             "text", requestDTO.getText(),
-                            "first_item_id", requestDTO.getFirstItemId(),
-                            "second_item_id", requestDTO.getSecondItemId(),
-                            "third_item_id", requestDTO.getThirdItemId(),
+                            "firstItemId", requestDTO.getFirstItemId(),
+                            "secondItemId", requestDTO.getSecondItemId(),
+                            "thirdItemId", requestDTO.getThirdItemId(),
                             "image", getImage(requestDTO.getImage())
                     ),
                     articleRowMapper

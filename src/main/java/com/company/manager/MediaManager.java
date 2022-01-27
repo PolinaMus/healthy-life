@@ -27,16 +27,6 @@ public class MediaManager {
         Files.createDirectories(path);
     }
 
-    public UploadSingleMediaResponseDTO save(byte[] bytes, String contentType) {
-        try {
-            final String name = generateName(contentType);
-            Files.write(path.resolve(name), bytes);
-            return new UploadSingleMediaResponseDTO(name);
-        } catch (IOException e) {
-            throw new UploadException(e);
-        }
-    }
-
     public UploadSingleMediaResponseDTO save(MultipartFile file) {
         try {
             final String name = generateName(file.getContentType());

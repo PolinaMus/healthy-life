@@ -60,9 +60,9 @@ Content-Type: application/json
   "name": "What’s in Your Multivitamin? Here Are 10 Ingredients To Look Out For",
   "category": "wellness",
   "text": "There is no question that the entire human body functions best when it has a steady supply of high-quality nutrition. A deficiency of any nutrient has profound effects on the human system because the body is a complex system dependent upon the proper functioning of many interdependent systems. ",
-  "first_item_id": 4,
-  "second_item_id": 8,
-  "third_item_id": 3
+  "firstItemId": 4,
+  "secondItemId": 8,
+  "thirdItemId": 3
 }
 
 ### Create Article with image
@@ -74,6 +74,10 @@ Content-Type: application/json
   "id": 0,
   "name": "5 Ways Vegetarians Can Get More Protein In Their Diet",
   "category": "nutrition",
+  "text": "There is no question that the entire human body functions best when it has a steady supply of high-quality nutrition. A deficiency of any nutrient has profound effects on the human system because the body is a complex system dependent upon the proper functioning of many interdependent systems. ",
+  "firstItemId": 2,
+  "secondItemId": 11,
+  "thirdItemId": 10,
   "image": "{{mediaName}}"
 }
 

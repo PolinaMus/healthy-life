@@ -181,8 +181,9 @@ public class ItemManager {
                             FROM articles
                             GROUP BY third_item_id
                         )
-                        SELECT if.item_id id, if.count, i.name FROM item_freq if
-                        LEFT JOIN items i ON if.item_id = i.id
+                        SELECT if.item_id id, i.name, if.count
+                        FROM item_freq if
+                                 LEFT JOIN items i ON if.item_id = i.id
                         ORDER BY if.count DESC
                         LIMIT 5;
                         """,

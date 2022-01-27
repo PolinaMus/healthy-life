@@ -45,10 +45,3 @@ VALUES ('How to heal acne?',
         'You’ve heard it before–you are what you eat. .',
         2, 5, 1, 'noimage.png')
 ;
-
-INSERT INTO articles(name, category, text, first_item_id, second_item_id, third_item_id, image)
-VALUES ('A Dermatologist Breaks Down the Best Diet for Your Skin Type',
-        'nutrition',
-        'You’ve heard it before–you are what you eat. .',
-        2, 5, 1, 'noimage.png')
-;
