@@ -215,24 +215,24 @@ class ItemCRUDTest {
                                               "name": "enzymes"
                                             },
                                             {
+                                              "id": 5,
+                                              "count": 2,
+                                              "name": "b complex"
+                                            },
+                                            {
+                                              "id": 2,
+                                              "count": 2,
+                                              "name": "vitamin c"
+                                            },
+                                            {
                                               "id": 6,
                                               "count": 1,
                                               "name": "magnesium"
                                             },
                                             {
-                                              "id": 2,
-                                              "count": 1,
-                                              "name": "vitamin c"
-                                            },
-                                            {
                                               "id": 1,
                                               "count": 1,
                                               "name": "vitamin d"
-                                            },
-                                            {
-                                              "id": 10,
-                                              "count": 1,
-                                              "name": "probiotics"
                                             }
                                           ]
                                         }
