@@ -27,12 +27,12 @@ public class ItemController {
     }
 
     @PostMapping("/removeById/{id}")
-    public void removeByIdFromPath(@PathVariable long id){
+    public void removeByIdFromPath(@PathVariable long id) {
         manager.removeById(id);
     }
 
     @PostMapping("/restoreById/{id}")
-    public void restoreByIdFromPath(@PathVariable long id){
+    public void restoreByIdFromPath(@PathVariable long id) {
         manager.restoreById(id);
     }
 

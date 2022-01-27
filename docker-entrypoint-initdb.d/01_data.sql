@@ -35,5 +35,20 @@ VALUES ('How to heal acne?',
        ('5 Tips To Help You Manage Your Cholesterol Levels', 'conditions',
         'Cardiovascular disease (CVD) is the leading cause of death globally, with a yearly mortality rate of nearly 18 million people. ' ||
         'There are many risk factors for CVD, one of them including high cholesterol levels.',
-        6, 9, 12, 'noimage.png')
+        6, 9, 12, 'noimage.png'),
+       ('How to Shop for Vegan Beauty Products',
+        'beauty',
+        'A product being labeled vegan means that it was created without the use of ingredients from animals.',
+        8, 13, 5, 'noimage.png'),
+       ('A Dermatologist Breaks Down the Best Diet for Your Skin Type',
+        'nutrition',
+        'You’ve heard it before–you are what you eat. .',
+        2, 5, 1, 'noimage.png')
+;
+
+INSERT INTO articles(name, category, text, first_item_id, second_item_id, third_item_id, image)
+VALUES ('A Dermatologist Breaks Down the Best Diet for Your Skin Type',
+        'nutrition',
+        'You’ve heard it before–you are what you eat. .',
+        2, 5, 1, 'noimage.png')
 ;

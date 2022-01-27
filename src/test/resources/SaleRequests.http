@@ -4,8 +4,8 @@ POST http://localhost:8080/sales/register
 Content-Type: application/json
 
 {
-  "itemId": 3,
-  "price": 900,
+  "itemId": 1,
+  "price": 500,
   "qty": 2
 }
 

@@ -66,9 +66,9 @@ Content-Type: application/json
 
 {
   "id": 0,
-  "name": "Spirulina",
-  "price": 1000,
-  "qty": 10,
+  "name": "Zinc",
+  "price": 750,
+  "qty": 450,
   "image": "{{mediaName}}"
 }
 

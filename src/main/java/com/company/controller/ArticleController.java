@@ -25,17 +25,17 @@ public class ArticleController {
     }
 
     @PostMapping("/save")
-    public ArticleSaveResponseDTO save(@RequestBody ArticleSaveRequestDTO requestDTO){
+    public ArticleSaveResponseDTO save(@RequestBody ArticleSaveRequestDTO requestDTO) {
         return manager.save(requestDTO);
     }
 
     @PostMapping("/removeById/{id}")
-    public void removeByIdFromPath(@PathVariable long id){
+    public void removeByIdFromPath(@PathVariable long id) {
         manager.removeById(id);
     }
 
     @PostMapping("/restoreById/{id}")
-    public void restoreByIdFromPath(@PathVariable long id){
+    public void restoreByIdFromPath(@PathVariable long id) {
         manager.restoreById(id);
     }
 }

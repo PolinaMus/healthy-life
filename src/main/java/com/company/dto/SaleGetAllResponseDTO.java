@@ -15,7 +15,7 @@ public class SaleGetAllResponseDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     @Data
-    public static class Sale{
+    public static class Sale {
         private long id;
         private String name;
         private int price;

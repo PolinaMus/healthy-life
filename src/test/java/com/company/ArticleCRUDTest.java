@@ -105,19 +105,19 @@ class ArticleCRUDTest {
                         MockMvcResultMatchers.content().json(
                                 // language=JSON
                                 """
-                                        {
-                                          "article": {
-                                            "id": 1,
-                                            "name": "How to heal acne?",
-                                            "category": "beauty",
-                                            "text": "If you're suffering from acne, you're not alone. Acne is a common skin condition that happens when oil and dead skin cells clog the skin’s pores.",
-                                            "firstItemId": 2,
-                                            "secondItemId": 3,
-                                            "thirdItemId": 4,
-                                            "image": "noimage.png"
-                                          }
-                                        }
-                                """
+                                                {
+                                                  "article": {
+                                                    "id": 1,
+                                                    "name": "How to heal acne?",
+                                                    "category": "beauty",
+                                                    "text": "If you're suffering from acne, you're not alone. Acne is a common skin condition that happens when oil and dead skin cells clog the skin’s pores.",
+                                                    "firstItemId": 2,
+                                                    "secondItemId": 3,
+                                                    "thirdItemId": 4,
+                                                    "image": "noimage.png"
+                                                  }
+                                                }
+                                        """
                         )
                 );
 
