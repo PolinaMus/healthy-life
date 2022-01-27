@@ -210,6 +210,11 @@ class ItemCRUDTest {
                                         {
                                           "items": [
                                             {
+                                              "id": 2,
+                                              "count": 4,
+                                              "name": "vitamin c"
+                                            },
+                                            {
                                               "id": 12,
                                               "count": 3,
                                               "name": "enzymes"
@@ -220,19 +225,14 @@ class ItemCRUDTest {
                                               "name": "b complex"
                                             },
                                             {
-                                              "id": 2,
-                                              "count": 3,
-                                              "name": "vitamin c"
+                                              "id": 11,
+                                              "count": 2,
+                                              "name": "multivitamin"
                                             },
                                             {
                                               "id": 1,
                                               "count": 2,
                                               "name": "vitamin d"
-                                            },
-                                            {
-                                              "id": 6,
-                                              "count": 1,
-                                              "name": "magnesium"
                                             }
                                           ]
                                         }
