@@ -41,7 +41,7 @@ GET http://localhost:8080/items/getAll
 
 ###
 
-GET http://localhost:8080/items/getById?id=13
+GET http://localhost:8080/items/getById?id=2
 
 ###
 
