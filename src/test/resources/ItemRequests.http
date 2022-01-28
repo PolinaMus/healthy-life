@@ -1,4 +1,4 @@
-###
+### Add image for Vitamin
 
 POST http://localhost:8080/media/multipart
 Content-Type: multipart/form-data;boundary=WebBoundary
@@ -13,7 +13,7 @@ Content-Type: image/jpeg
 client.global.set('mediaName',response.body.name);
  %}
 
-###
+### Add image for Vitamin
 
 POST http://localhost:8080/media/multipart
 Content-Type: multipart/form-data;boundary=WebBoundary
@@ -24,7 +24,7 @@ Content-Type: image/jpeg
 
 < VitaminC.jpg
 
-###
+### Add image for Vitamin
 
 POST http://localhost:8080/media/multipart
 Content-Type: multipart/form-data;boundary=WebBoundary
@@ -35,19 +35,19 @@ Content-Type: image/jpeg
 
 < Spirulina.jpg
 
-###
+### Get all Vitamins
 
 GET http://localhost:8080/items/getAll
 
-###
+### Get Vitamin by id
 
 GET http://localhost:8080/items/getById?id=2
 
-###
+### Get Vitamin by non-existent id
 
 GET http://localhost:8080/items/getById?id=999
 
-### Create Item without image
+### Create Vitamin without image
 
 POST http://localhost:8080/items/save
 Content-Type: application/json
@@ -59,7 +59,7 @@ Content-Type: application/json
   "qty": 10
 }
 
-### Create Item with image
+### Create Vitamin with image
 
 POST http://localhost:8080/items/save
 Content-Type: application/json
@@ -72,15 +72,15 @@ Content-Type: application/json
   "image": "{{mediaName}}"
 }
 
-###
+### Remove Vitamin by id
 
 POST http://localhost:8080/items/removeById/13
 
-###
+### Restore Vitamin by id
 
 POST http://localhost:8080/items/restoreById/13
 
-###
+### Get 5 popular Vitamins
 
 GET http://localhost:8080/items/getPopular
 

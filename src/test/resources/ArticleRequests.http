@@ -1,4 +1,4 @@
-###
+### Add image for Article
 
 POST http://localhost:8080/media/multipart
 Content-Type: multipart/form-data;boundary=WebBoundary
@@ -14,7 +14,7 @@ Content-Type: image/jpeg
 client.global.set('mediaName',response.body.name);
  %}
 
-###
+### Add multiple images for Article
 
 POST http://localhost:8080/media/multi-multipart
 Content-Type: multipart/form-data;boundary=WebBoundary
@@ -38,15 +38,15 @@ Content-Type: image/jpeg
 < Prebiotics.jpg
 --WebBoundary--
 
-###
+### Get all Articles
 
 GET http://localhost:8080/articles/getAll
 
-###
+### Get Article by id
 
 GET http://localhost:8080/articles/getById?id=1
 
-###
+### Get Article by non-existent id
 
 GET http://localhost:8080/articles/getById?id=999
 
@@ -81,11 +81,11 @@ Content-Type: application/json
   "image": "{{mediaName}}"
 }
 
-###
+### Remove Article by id
 
 POST http://localhost:8080/articles/removeById/5
 
-###
+### Restore Article by id
 
 POST http://localhost:8080/articles/restoreById/5
 

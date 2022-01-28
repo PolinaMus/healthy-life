@@ -1,4 +1,4 @@
-###
+### Register Sale
 
 POST http://localhost:8080/sales/register
 Content-Type: application/json
@@ -9,14 +9,14 @@ Content-Type: application/json
   "qty": 2
 }
 
-###
+### Get all Sales
 
 GET http://localhost:8080/sales/getAll
 
-###
+### Get Sale by id
 
 GET http://localhost:8080/sales/getById?id=2
 
-###
+### Get Sale by non-existent id
 
 GET http://localhost:8080/sales/getById?id=999
